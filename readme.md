@@ -29,15 +29,26 @@ MIN-MAX, COUNT-AVG-SUM, GROUP BY, JOINS (INNER, OUTER, LEFT, RIGHT
 	#ilk 3 soruyu join kullanmadan yazın.
 	1) Öğrencinin adını, soyadını ve kitap aldığı tarihleri listeleyin.
 	
+         SELECT ogrenci.ograd, ogrenci.ogrsoyad, islem.atarih FROM ogrenci , islem 
+		 WHERE ogrenci.ogrno= islem.ogrno
+		 ORDER BY ogrenci.ograd
 
-	
 	2) Fıkra ve hikaye türündeki kitapların adını ve türünü listeleyin.
-	
+
+	    SELECT kitap.kitapadi, tur.turadi FROM kitap, tur
+		WHERE kitap.turno=tur.turno
+		AND tur.turadi IN ('Fıkra', 'Hikaye');
 	
 	3) 10B veya 10C sınıfındaki öğrencilerin numarasını, adını, soyadını ve okuduğu kitapları listeleyin.
+    
+	    SELECT 
+
 	
 	#join ile yazın
 	4) Öğrencinin adını, soyadını ve kitap aldığı tarihleri listeleyin.
+
+	    SELECT ogrenci.ograd, ogrenci.ogrsoyad, islem.atarih FROM ogrenci
+		INNER JOIN islem ON ogrenci.ogrno=islem.ogrno
 	
 	
 	5) Fıkra ve hikaye türündeki kitapların adını ve türünü listeleyin.
